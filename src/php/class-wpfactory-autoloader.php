@@ -2,7 +2,7 @@
 /**
  * WPFactory Autoloader.
  *
- * @version 1.0.0
+ * @version 1.0.1
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -69,7 +69,6 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 		 * @return void
 		 */
 		public function add_namespace( $prefix, $base_dir, $prepend = false ) {
-			//$base_dir = trailingslashit($base_dir);
 
 			// normalize namespace prefix
 			$prefix = trim( $prefix, '\\' ) . '\\';
@@ -133,7 +132,7 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 		/**
 		 * Load the mapped file for a namespace prefix and relative class.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.1
 		 * @since   1.0.0
 		 *
 		 * @param string $prefix The namespace prefix.
@@ -150,13 +149,8 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 
 			// look through base directories for this namespace prefix
 			foreach ( $this->prefixes[ $prefix ] as $base_dir ) {
-
-				$filename = 'class-' . str_replace( '_', '-', strtolower( $relative_class ) );
-
-				// replace the namespace prefix with the base directory,
-				// replace namespace separators with directory separators
-				// in the relative class name, append with .php
-				$file = $base_dir . str_replace( '\\', DIRECTORY_SEPARATOR, $filename ) . '.php';
+				$filename = $this->get_filename_from_relative_class( $relative_class );
+				$file     = $base_dir . str_replace( '\\', DIRECTORY_SEPARATOR, $filename );
 
 				// if the mapped file exists, require it
 				if ( $this->require_file( $file ) ) {
@@ -171,6 +165,25 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 
 			// never found it
 			return false;
+		}
+
+		/**
+		 * Get relative file path.
+		 *
+		 * @version 1.0.1
+		 * @since   1.0.1
+		 *
+		 * @param $relative_class
+		 *
+		 * @return string
+		 */
+		protected function get_filename_from_relative_class( $relative_class ) {
+			$relative_class = str_replace( '_', '-', strtolower( $relative_class ) );
+			$pieces         = explode( '\\', $relative_class );
+			$last           = array_pop( $pieces );
+			$last           = 'class-' . $last . '.php';
+			$pieces[]       = $last;
+			return implode( DIRECTORY_SEPARATOR, $pieces );
 		}
 
 		/**
