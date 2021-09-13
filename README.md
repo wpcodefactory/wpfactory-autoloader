@@ -7,7 +7,7 @@ This will work as a default [PSR-4 autoloader](https://www.php-fig.org/psr/psr-4
 - Class names will always be converted to lowercase.
 
 ### Example ###
-A class `TopLevelNamespace\My_Class` will call `class-my-class.php` file.
+A class `TopLevelNamespace\My_Class` expects for a `class-my-class.php` file.
 
 ## Installation ##
 Add this to your composer.json
