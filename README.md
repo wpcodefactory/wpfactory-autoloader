@@ -2,7 +2,7 @@
 Autoload classes following [WordPress naming conventions](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/).
 
 This will work as a default [PSR-4 autoloader](https://www.php-fig.org/psr/psr-4/) but with some differences:
-- A `class-` will be prepended to the final class name
+- A `class-` will be prepended to the final class name.
 - Underscores in classes namespaces will be converted to hyphens.
 - Class names will always be converted to lowercase.
 
@@ -28,8 +28,8 @@ Don't forget to require the `autoload.php` to your project, as it's required for
 
 ## Usage ##
 You just need to instance the `WPFactory_Autoloader()` class passing two parameters to the `add_namespace()` method:
-* The top-level namespace name of your your project, also known as a "vendor namespace"
-* Base directory where the files are located
+* The top-level namespace name of your your project, also known as a "vendor namespace".
+* Base directory where the files are located.
 
 And then call the `init()` method.
 
