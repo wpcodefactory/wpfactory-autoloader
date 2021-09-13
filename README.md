@@ -1,9 +1,9 @@
 # WPFactory Autoloader
-Autoload classes following WordPress naming conventions.
+Autoload classes following [WordPress naming conventions](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/).
 
 This will work as a default [PSR-4 autoloader](https://www.php-fig.org/psr/psr-4/) but with some differences:
 - A `class-` will be prepended to the final class name
-- Underscores in classes namespaces will be converted to dashes.
+- Underscores in classes namespaces will be converted to hyphens.
 - Class names will always be converted to lowercase.
 
 ### Example ###
