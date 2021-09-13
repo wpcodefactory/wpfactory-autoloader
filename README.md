@@ -4,6 +4,7 @@ Autoload classes following WordPress naming conventions.
 This will work as a default [PSR-4 autoloader](https://www.php-fig.org/psr/psr-4/) but with some differences:
 - A `class-` will be prepended to the final class name
 - Underscores in classes namespaces will be converted to dashes.
+- Class names will always be converted to lowercase.
 
 ### Example ###
 A class `TopLevelNamespace\My_Class` will call `class-my-class.php` file.
