@@ -2,7 +2,7 @@
 /**
  * WPFactory Autoloader.
  *
- * @version 1.0.3
+ * @version 1.0.4
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -56,7 +56,7 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 		/**
 		 * Adds a base directory for a namespace prefix.
 		 *
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * @since   1.0.0
 		 *
 		 * @param string $prefix The namespace prefix.
@@ -113,7 +113,7 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 		/**
 		 * Loads the class file for a given class name.
 		 *
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * @since   1.0.0
 		 *
 		 * @param string $class The fully-qualified class name.
@@ -139,7 +139,7 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 		/**
 		 * Load the mapped file for a namespace prefix and relative class.
 		 *
-		 * @version 1.0.3
+		 * @version 1.0.4
 		 * @since   1.0.0
 		 *
 		 * @param string $prefix The namespace prefix.
