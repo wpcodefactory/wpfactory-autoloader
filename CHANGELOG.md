@@ -10,7 +10,7 @@
 
 ## [1.0.5] - 2025-10-07
 ### Fixed
-* Fixed overlapping namespaces, prioritizing longer matches.
+* Overlapping namespaces, prioritizing longer matches.
 
 ## [1.0.0] - 2021-07-20
 ### Added
