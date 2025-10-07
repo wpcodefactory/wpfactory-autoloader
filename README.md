@@ -20,7 +20,7 @@ Add this to your composer.json
     }
   ],
   "require": {
-    "wpfactory/wpfactory-autoloader":"dev-master"
+    "wpfactory/wpfactory-autoloader":"*"
   }
 ```
 
